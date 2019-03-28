@@ -1,0 +1,17 @@
+2019-03-25 10:39:51 [192.168.10.73] [error] [] Module not found! in /Users/dingding/PhpstormProjects/blast2_game/app/Middlewares/ModulesDispatchMiddleware.php:37
+Stack trace:
+#0 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Aop/Aop.php(57): App\Middlewares\ModulesDispatchMiddleware->process(Object(Swoft\Http\Message\Server\Request), Object(Swoft\Core\RequestHandler))
+#1 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Proxy/Handler/AopHandler.php(43): Swoft\Aop\Aop->execute(Object(App\Middlewares\ModulesDispatchMiddleware), 'process', Array)
+#2 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Proxy/Proxy.php(44) : eval()'d code(8): Swoft\Proxy\Handler\AopHandler->invoke('process', Array)
+#3 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Core/RequestHandler.php(64): ModulesDispatchMiddleware_5c936ab4eb009->process(Object(Swoft\Http\Message\Server\Request), Object(Swoft\Core\RequestHandler))
+#4 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/http-server/src/Middleware/SwoftMiddleware.php(47): Swoft\Core\RequestHandler->handle(Object(Swoft\Http\Message\Server\Request))
+#5 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Aop/Aop.php(57): Swoft\Http\Server\Middleware\SwoftMiddleware->process(Object(Swoft\Http\Message\Server\Request), Object(Swoft\Core\RequestHandler))
+#6 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Proxy/Handler/AopHandler.php(43): Swoft\Aop\Aop->execute(Object(Swoft\Http\Server\Middleware\SwoftMiddleware), 'process', Array)
+#7 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Proxy/Proxy.php(44) : eval()'d code(8): Swoft\Proxy\Handler\AopHandler->invoke('process', Array)
+#8 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Core/RequestHandler.php(64): SwoftMiddleware_5c936ab50fd49->process(Object(Swoft\Http\Message\Server\Request), Object(Swoft\Core\RequestHandler))
+#9 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/http-server/src/ServerDispatcher.php(62): Swoft\Core\RequestHandler->handle(Object(Swoft\Http\Message\Server\Request))
+#10 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Aop/Aop.php(57): Swoft\Http\Server\ServerDispatcher->dispatch(Object(Swoft\Http\Message\Server\Request), Object(Swoft\Http\Message\Server\Response))
+#11 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Proxy/Handler/AopHandler.php(43): Swoft\Aop\Aop->execute(Object(Swoft\Http\Server\ServerDispatcher), 'dispatch', Array)
+#12 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/framework/src/Proxy/Proxy.php(44) : eval()'d code(8): Swoft\Proxy\Handler\AopHandler->invoke('dispatch', Array)
+#13 /Users/dingding/PhpstormProjects/blast2_game/vendor/swoft/http-server/src/Http/HttpServer.php(95): ServerDispatcher_5c936ab51ed02->dispatch(Object(Swoft\Http\Message\Server\Request), Object(Swoft\Http\Message\Server\Response))
+#14 {main}

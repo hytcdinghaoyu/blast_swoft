@@ -1,0 +1,28 @@
+{
+    "type": "hotUpdate",
+    "operation": "insert",
+    "rule": {
+        "ruleName": "1.5.3_closeServer",
+        "status": "1",
+        "type": "1",
+        "scheduleStart": "1539100800",
+        "scheduleEnd": "1546185600",
+        "description": "\u5173\u95ed\u670d\u52a1\u5668",
+        "parentRule": "0",
+        "isParent": "0"
+    },
+    "rule_criteria": [
+        {
+            "aid": "2",
+            "choices": "=",
+            "value": "[\"1.5.3\"]"
+        }
+    ],
+    "rule_configurations": [
+        {
+            "type": "1",
+            "value": "{\"closeServerSign\" : 1}",
+            "md5": null
+        }
+    ]
+}

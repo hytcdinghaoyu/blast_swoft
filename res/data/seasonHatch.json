@@ -1,0 +1,142 @@
+{
+  "data":
+  [
+    {
+      "id": 12,
+      "name": "2018.1",
+      "start_at": 1535990400,
+      "end_at": 1536163200,
+      "is_deleted": 0,
+      "created_at": 1535104463,
+      "updated_at": 1535355767,
+      "config_level": 30
+    },
+    {
+      "id": 13,
+      "name": "2018.2",
+      "operator": "admin",
+      "start_at": 1536595200,
+      "end_at": 1536768000,
+      "is_deleted": 0,
+      "created_at": 1535104507,
+      "updated_at": 1535355771,
+      "config_level": 30
+    },
+    {
+      "id": 14,
+      "name": "2018.3",
+      "operator": "admin",
+      "start_at": 1537200000,
+      "end_at": 1537372800,
+      "is_deleted": 0,
+      "created_at": 1535104543,
+      "updated_at": 1535355774,
+      "config_level": 30
+    },
+    {
+      "id": 15,
+      "name": "2018.4",
+      "operator": "admin",
+      "start_at": 1537804800,
+      "end_at": 1537977600,
+      "is_deleted": 0,
+      "created_at": 1535104557,
+      "updated_at": 1535355778,
+      "config_level": 30
+    },
+    {
+      "id": 16,
+      "name": "2018.5",
+      "operator": "admin",
+      "start_at": 1538409600,
+      "end_at": 1538582400,
+      "is_deleted": 0,
+      "created_at": 1535104565,
+      "updated_at": 1535355783,
+      "config_level": 30
+    },
+    {
+      "id": 17,
+      "name": "2018.6",
+      "start_at": 1539014400,
+      "end_at": 1539187200,
+      "is_deleted": 0,
+      "created_at": 1535104574,
+      "updated_at": 1535355790,
+      "config_level": 30
+    },
+    {
+      "id": 18,
+      "name": "2018.7",
+      "start_at": 1539619200,
+      "end_at": 1539792000,
+      "is_deleted": 0,
+      "created_at": 1535104587,
+      "updated_at": 1535355795,
+      "config_level": 30
+    },
+    {
+      "id": 19,
+      "name": "2018.8",
+      "start_at": 1540224000,
+      "end_at": 1540396800,
+      "is_deleted": 0,
+      "created_at": 1535104597,
+      "updated_at": 1535355801,
+      "config_level": 30
+    },
+    {
+      "id": 20,
+      "name": "2018.9",
+      "operator": "admin",
+      "start_at": 1540828800,
+      "end_at": 1541001600,
+      "is_deleted": 0,
+      "created_at": 1535104607,
+      "updated_at": 1535355806,
+      "config_level": 30
+    },
+    {
+      "id": 21,
+      "name": "2018.10",
+      "start_at": 1541433600,
+      "end_at": 1541606400,
+      "is_deleted": 0,
+      "created_at": 1535105006,
+      "updated_at": 1535355811,
+      "config_level": 30
+    },
+    {
+      "id": 22,
+      "name": "2018.11",
+      "operator": "admin",
+      "start_at": 1542038400,
+      "end_at": 1542211200,
+      "is_deleted": 0,
+      "created_at": 1535105060,
+      "updated_at": 1535355818,
+      "config_level": 30
+    },
+    {
+      "id": 23,
+      "name": "2018.12",
+      "operator": "admin",
+      "start_at": 1542643200,
+      "end_at": 1542816000,
+      "is_deleted": 0,
+      "created_at": 1535105073,
+      "updated_at": 1535355822,
+      "config_level": 30
+    },
+    {
+      "id": 24,
+      "name": "2018.13",
+      "start_at": 1543248000,
+      "end_at": 1543420800,
+      "is_deleted": 0,
+      "created_at": 1535105081,
+      "updated_at": 1535355828,
+      "config_level": 30
+    }
+  ]
+}

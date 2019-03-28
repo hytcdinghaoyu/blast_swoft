@@ -1,0 +1,10 @@
+stages:
+  - deploy
+deploy:
+    stage: deploy
+    script:
+      - deployjson
+    only:
+      - blast2/demo
+    tags:
+      - my-tag

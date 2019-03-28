@@ -1,0 +1,35 @@
+{
+  "data":
+  [
+    {
+      "id": 33,
+      "name": "2018.1",
+      "operator": "admin",
+      "start_at": 1535299200,
+      "end_at": 1537977600,
+      "is_deleted": 0,
+      "created_at": 1534755310,
+      "updated_at": 1535355749
+    },
+    {
+      "id": 34,
+      "name": "2018.2",
+      "operator": "admin",
+      "start_at": 1537977600,
+      "end_at": 1540569600,
+      "is_deleted": 0,
+      "created_at": 1535105249,
+      "updated_at": 1535355752
+    },
+    {
+      "id": 35,
+      "name": "2018.3",
+      "operator": "admin",
+      "start_at": 1540569600,
+      "end_at": 1543161600,
+      "is_deleted": 0,
+      "created_at": 1535105379,
+      "updated_at": 1535355756
+    }
+  ]
+}

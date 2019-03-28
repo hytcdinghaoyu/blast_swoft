@@ -1,0 +1,7 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/UserFunctions.php';
+
+$console = new \Swoft\Console\Console();
+$console->run();

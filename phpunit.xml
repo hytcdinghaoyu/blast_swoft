@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="./test/bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Tests">
+            <directory suffix="Test.php">./test</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="./test/codeCoverage" charset="UTF-8"/>
+    </logging>
+    <php>
+        <var name="deviceId" value="F236FC32-E732-D626-C274-2FE8CD9B7DF0"/>
+        <var name="appVersion" value="1.1.7.13199-108288-107381"/>
+        <var name="channel" value="AppStore"/>
+        <var name="configVersion" value="1.0.4"/>
+        <var name="platform" value="0"/>
+    </php>
+</phpunit>

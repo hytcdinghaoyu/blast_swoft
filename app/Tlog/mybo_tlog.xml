@@ -1,0 +1,604 @@
+<metalib tagsetversion="1" name="Log" version="2">
+
+    <!--
+    ////////////////////////////////////////////////////////
+   该TLOG文档说明：
+     1.该XML只针对第一类数据，用于TLOG开发。
+     2.表与字段说明。 表与字段desc列里面说明可选或必填。
+     3.注意事项。
+       A>增删字段。TLOG XML版本确定并接入TDW后，不能删除字段，增加字段在表结尾增加。
+       B>数据类型。同种数据类型可变更。int类型可以转换string,但string 不能转int.
+     4.表名与字段名尽可能与本XML模板保持一致，方便维护。
+    /////////////////////////////////////////////////////////
+     -->
+
+    <!--*****************************************************************
+    ///////////////////////////////////////////////////////////////////
+    //////////////////第一类走tlog流水数据/////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    ********************************************************************-->
+
+    <!--//////////////////////////////////////////////
+    ///////服务器状态日志///////////////////////////////
+    /////////////////////////////////////////////////-->
+    <!-----*** GameSvrState|2017-09-27 09:30:01|43.230.45.115|0 ****------>
+    <struct name="GameSvrState" filter="1" version="1" desc="(必填)服务器状态流水，每5分钟一条日志">
+        <entry name="dtEventTime" type="datetime" desc="(必填) 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameIP" type="string" size="32" desc="(必填)服务器IP"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+      ///////玩家注册表///////////////////////////////
+     /////////////////////////////////////////////////-->
+    <!-----*** PlayerRegister|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|134|10.3.1|iPhone7,2|tencent|WIFI|10|20|7||8|4096|NULL|NULL|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|2017-09-27 09:30:01|134  ****------>
+    <struct name="PlayerRegister" version="1" desc="(必填)玩家注册">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0 /android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)用户OPENID号"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端版本"/>
+        <entry name="SystemSoftware" type="string" size="64" defaultvalue="NULL" desc="(可选)移动终端操作系统版本"/>
+        <entry name="SystemHardware" type="string" size="64" defaultvalue="NULL" desc="(可选)移动终端机型"/>
+        <entry name="TelecomOper" type="string" size="64" defaultvalue="NULL" desc="(必填)运营商"/>
+        <entry name="Network" type="string" size="64" defaultvalue="NULL" desc="(可选)3G/WIFI/2G"/>
+        <entry name="ScreenWidth" type="int" defaultvalue="0" desc="(可选)显示屏宽度"/>
+        <entry name="ScreenHight" type="int" defaultvalue="0" desc="(可选)显示屏高度"/>
+        <entry name="Density" type="float" defaultvalue="0" desc="(可选)像素密度"/>
+        <entry name="RegChannel" type="int" defaultvalue="0" desc="(必填)注册渠道"/>
+        <entry name="CpuHardware" type="string" size="64" defaultvalue="NULL" desc="(可选)cpu类型|频率|核数"/>
+        <entry name="Memory" type="int" defaultvalue="0" desc="(可选)内存信息单位M"/>
+        <entry name="GLRender" type="string" size="64" defaultvalue="NULL" desc="(可选)opengl render信息"/>
+        <entry name="GLVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)opengl版本信息"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本"/>
+    </struct>
+
+    <!--//////////////////////////////////////////////
+   ///////玩家登录表///////////////////////////////
+  /////////////////////////////////////////////////-->
+    <!-----*** PlayerLogin|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|100|20|134|10.3.1|iPhone7,2|tencent|WIFI|10|20|7||NULL|seliya|8|4096|NULL|NULL|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|2017-09-27 09:30:01|134|100|10|10|10|10|10|10|10|10|10|10|10|10|10 ****------>
+    <struct name="PlayerLogin" version="1" desc="(必填)玩家登陆">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)用户OPENID号"/>
+        <entry name="Level" type="int" desc="(必填)等级"/>
+        <entry name="PlayerFriendsNum" type="int" desc="(必填)玩家好友数量"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="SystemSoftware" type="string" size="64" defaultvalue="NULL" desc="(可选)移动终端操作系统版本"/>
+        <entry name="SystemHardware" type="string" size="64" defaultvalue="NULL" desc="(必填)移动终端机型"/>
+        <entry name="TelecomOper" type="string" size="64" defaultvalue="NULL" desc="(必填)运营商"/>
+        <entry name="Network" type="string" size="64" defaultvalue="NULL" desc="(必填)3G/WIFI/2G"/>
+        <entry name="ScreenWidth" type="int" defaultvalue="0" desc="(可选)显示屏宽度"/>
+        <entry name="ScreenHight" type="int" defaultvalue="0" desc="(可选)显示屏高度"/>
+        <entry name="Density" type="float" defaultvalue="0" desc="(可选)像素密度"/>
+        <entry name="LoginChannel" type="int" defaultvalue="0" desc="(必填)登录渠道"/>
+        <entry name="vRoleID" type="string" size="64" defaultvalue="NULL" desc="(必填)玩家角色ID"/>
+        <entry name="vRoleName" type="string" size="64" defaultvalue="NULL" desc="(必填)玩家角色名"/>
+        <entry name="CpuHardware" type="string" size="64" defaultvalue="NULL" desc="(可选)cpu类型-频率-核数"/>
+        <entry name="Memory" type="int" defaultvalue="0" desc="(可选)内存信息单位M"/>
+        <entry name="GLRender" type="string" size="64" defaultvalue="NULL" desc="(可选)opengl render信息"/>
+        <entry name="GLVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)opengl版本信息"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本"/>
+        <entry name="totalStar" type="int" desc="(必填)剩余星星数"/>
+        <entry name="Gold" type="int" desc="(必填)剩余金币数"/>
+        <entry name="Silver" type="int" desc="(必填)剩余银币数"/>
+        <entry name="CountBoom" type="int" desc="(必填)剩余关前炸弹道具数"/>
+        <entry name="CountThreeStep" type="int" desc="(必填)剩余关前加三步道具数"/>
+        <entry name="CountSingle" type="int" desc="(必填)剩余弹弓道具数"/>
+        <entry name="CountRow" type="int" desc="(必填)剩余横向火箭道具数"/>
+        <entry name="CountColumn" type="int" desc="(必填)剩余竖向火箭道具数"/>
+        <entry name="CountRefresh" type="int" desc="(必填)剩余置换道具数"/>
+        <entry name="CountColor" type="int" desc="(必填)剩余镭射枪道具数"/>
+        <entry name="Prosperity" type="int" desc="(必填)繁荣度"/>
+    </struct>
+
+    <!--//////////////////////////////////////////////
+      ///////玩家登出表///////////////////////////////
+     /////////////////////////////////////////////////-->
+    <!-----*** PlayerLogout|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|120|100|20|134|10.3.1|iPhone7,2|tencent|WIFI|10|20|7||8|4096|NULL|NULL|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115 |RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|2017-09-27 09:30:01|134|100|10  ****------>
+    <struct name="PlayerLogout" version="1" desc="(必填)玩家登出">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)用户OPENID号"/>
+        <entry name="OnlineTime" type="int" desc="(必填)本次登录在线时间(秒)"/>
+        <entry name="Level" type="int" desc="(必填)等级"/>
+        <entry name="PlayerFriendsNum" type="int" desc="(必填)玩家好友数量"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="SystemSoftware" type="string" size="64" defaultvalue="NULL" desc="(可选)移动终端操作系统版本"/>
+        <entry name="SystemHardware" type="string" size="64" defaultvalue="NULL" desc="(必填)移动终端机型"/>
+        <entry name="TelecomOper" type="string" size="64" defaultvalue="NULL" desc="(必填)运营商"/>
+        <entry name="Network" type="string" size="64" defaultvalue="NULL" desc="(必填)3G/WIFI/2G"/>
+        <entry name="ScreenWidth" type="int" defaultvalue="0" desc="(可选)显示屏宽度"/>
+        <entry name="ScreenHight" type="int" defaultvalue="0" desc="(可选)显示高度"/>
+        <entry name="Density" type="float" defaultvalue="0" desc="(可选)像素密度"/>
+        <entry name="LoginChannel" type="int" defaultvalue="0" desc="(可选)登录渠道"/>
+        <entry name="CpuHardware" type="string" size="64" defaultvalue="NULL" desc="(可选)cpu类型;频率;核数"/>
+        <entry name="Memory" type="int" defaultvalue="0" desc="(可选)内存信息单位M"/>
+        <entry name="GLRender" type="string" size="64" defaultvalue="NULL" desc="(可选)opengl render信息"/>
+        <entry name="GLVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)opengl版本信息"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+     ///////游戏货币流水表///////////////////////////////
+    /////////////////////////////////////////////////-->
+    <!-----*** MoneyFlow|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc||20|1000|25|||0|1|134|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|2017-09-27 09:30:01|134|100|10 ****------>
+    <macrosgroup name="ADDORREDUCE">
+        <macro name="ADD" value="0" desc="加"/>
+        <macro name="REDUCE" value="1" desc="减"/>
+    </macrosgroup>
+
+    <macrosgroup name="iMoneyType">
+        <macro name="MT_MONEY" value="0" desc="游戏金币"/>
+        <macro name="MT_DIAMOND" value="1" desc="游戏银币"/>
+        <macro name="MT_STAR" value="2" desc="游戏星星"/>
+    </macrosgroup>
+
+    <struct name="MoneyFlow" version="1" desc="(必填)货币流水">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)用户OPENID号"/>
+        <entry name="Sequence" type="int" desc="(可选)用于关联一次动作产生多条不同类型的货币流动日志"/>
+        <entry name="Level" type="int" desc="(必填)玩家等级"/>
+        <entry name="AfterMoney" type="int" desc="(可选)动作后的金钱数"/>
+        <entry name="iMoney" type="int" desc="(必填)动作涉及的金钱数"/>
+        <entry name="Reason" type="int" desc="(必填)货币流动一级原因"/>
+        <entry name="SubReason" type="int" desc="(可选)货币流动二级原因"/>
+        <entry name="AddOrReduce" type="int" desc="(必填)增加 0/减少 1"/>
+        <entry name="iMoneyType" type="int" desc="(必填)钱的类型MONEYTYPE,其它货币类型参考FAQ文档"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+     ///////道具流水表///////////////////////////////
+    /////////////////////////////////////////////////-->
+    <!-----*** ItemFlow|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|100||1|1281|3|10|||25|1|0|1|134|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|RCb1e87545-47e1-4224-9540-502bd90d76da|2017-09-27 09:30:01|134|100|10 ****------>
+    <macrosgroup name="ADDORREDUCE">
+        <macro name="ADD" value="0" desc="加"/>
+        <macro name="REDUCE" value="1" desc="减"/>
+    </macrosgroup>
+
+
+    <macrosgroup name="iGoodsType">
+        <macro name="IN_LEVEL" value="0" desc=""/>
+        <macro name="BEFORE_LEVEL" value="1" desc=""/>
+    </macrosgroup>
+    <macrosgroup name="iUseType">
+        <macro name="DEFAULT_LEVEL" value="0" desc="主线关卡"/>
+        <macro name="ACTIVE_LEVEL" value="1" desc="策划活动"/>
+    </macrosgroup>
+
+    <struct name="ItemFlow" version="1" desc="(必填)道具流水表">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)玩家"/>
+        <entry name="Level" type="int" desc="(必填)玩家等级"/>
+        <entry name="Sequence" type="int" desc="(可填)用于关联一次购买产生多条不同类型的货币日志"/>
+        <entry name="iGoodsType" type="int" desc="(必填)道具类型"/>
+        <entry name="iGoodsId" type="int" desc="(必填)道具ID"/>
+        <entry name="Count" type="int" desc="(必填)数量"/>
+        <entry name="AfterCount" type="int" desc="(必填)动作后的物品存量"/>
+        <entry name="Reason" type="int" desc="(必填)道具流动一级原因"/>
+        <entry name="SubReason" type="int" desc="(必填)道具流动二级原因"/>
+        <entry name="iMoney" type="int" desc="(必填)花费代币或金币购买道具情况下输出消耗的钱数量，否则填0"/>
+        <entry name="iMoneyType" type="int" desc="(必填)钱的类型MONEYTYPE,其它货币类型参考FAQ文档"/>
+        <entry name="AddOrReduce" type="int" desc="(必填)增加 0/减少 1"/>
+        <entry name="iUseType" type="int" defaultvalue="0" desc="(必填)道具消耗的场景，默认为主线关卡消费"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+        <entry name="BattleItem" type="string" size="64" defaultvalue="NULL" desc="(必填)用于关联单局使用道具的日志"/>
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+      ///////社交系统流水表///////////////////////////////
+     /////////////////////////////////////////////////-->
+    <macrosgroup name="SNSTYPE">
+        <macro name="SNSTYPE_SHOWOFF" value="0" desc="炫耀"/>
+        <macro name="SNSTYPE_INVITE" value="1" desc="邀请"/>
+        <macro name="SNSTYPE_SENDHEART" value="2" desc="送心"/>
+        <macro name="SNSTYPE_RECEIVEHEART" value="3" desc="收取心"/>
+        <macro name="SNSTYPE_SENDEMAIL" value="4" desc="发邮件"/>
+        <macro name="SNSTYPE_RECEIVEEMAIL" value="5" desc="收邮件"/>
+        <macro name="SNSTYPE_SHARE" value="6" desc="分享"/>
+        <macro name="SNSTYPE_OTHER" value="7" desc="其他原因"/>
+    </macrosgroup>
+
+
+    <struct name="SnsFlow" version="1" desc="(必填)SNS流水">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="ActorOpenID" type="string" size="64" desc="(必填)动作发起玩家"/>
+        <entry name="RecNum" type="int" desc="(可选)接收玩家个数"/>
+        <entry name="Count" type="int" desc="(必填)发送的数量"/>
+        <entry name="SNSType" type="int" desc="(必填)交互一级类型,其它说明参考FAQ文档"/>
+        <entry name="SNSSubType" type="int" desc="(可选)交互二级类型"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+        /////关卡/副本/对局流水表(关卡/副本/对局结束触发日志)///
+        //////////////////////////////////////////////-->
+    <!-----*** RoundFlow|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|127|0|1234|104|1|||134|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|5|RCb1e87545-47e1-4224-9540-502bd90d76da|5|5|5|default|1|2017-09-27 09:30:01|134|100|10|10|1 ****------>
+
+    <macrosgroup name="RESULT" desc="不要随意修改，否则影响统计结果">
+        <macro name="SUCCESS" value="1" desc="成功"/>
+        <macro name="FAIL" value="0" desc="失败"/>
+        <macro name="EXIT" value="2" desc="中途退出，不重玩"/>
+        <macro name="EXIT_RESTART" value="3" desc="中途退出，重玩"/>
+        <macro name="KILL_PROCESS" value="4" desc="中途强退游戏(杀进程)"/>
+        <macro name="MISS_DATA" value="5" desc="客户端与服务器数据不一致，从客户端同步过来的过关数据"/>
+    </macrosgroup>
+
+    <macrosgroup name="BATTLETYPE">
+        <macro name="BATTLE_PVE" value="0" desc="单人游戏"/>
+        <macro name="BATTLE_PVP" value="1" desc="对战游戏"/>
+        <macro name="BATTLE_OTHER" value="2" desc="其他对局"/>
+    </macrosgroup>
+
+    <struct name="RoundFlow" version="1" desc="(必填)单局结束数据流水">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)玩家"/>
+        <entry name="BattleID" type="int" desc="(必填)关卡id或者副本id[副本ID必须有序]，对局时填0"/>
+        <entry name="BattleType" type="int" desc="(必填)战斗类型 对应BATTLETYPE,其它说明参考FAQ文档"/>
+        <entry name="RoundScore" type="int" defaultvalue="0" desc="(必填)本局分数,无得分的填0"/>
+        <entry name="RoundTime" type="int" desc="(必填)对局时长(秒)"/>
+        <entry name="Result" type="int" desc="(必填)单局结果，参考 Result"/>
+        <entry name="Rank" type="int" desc="(必填)排名"/>
+        <entry name="Gold" type="int" desc="(必填)金钱"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+        <entry name="totalStar" type="int" desc="(必填)剩余星数"/>
+        <entry name="BattleItem" type="string" size="64" defaultvalue="NULL" desc="(必填)用于关联单局使用道具的日志"/>
+        <entry name="SurplusStep" type="int" desc="(必填)剩余步数"/>
+        <entry name="LevelGoals" type="int" desc="(必填)关卡目标总数"/>
+        <entry name="BattleGoals" type="int" desc="(必填)关卡目标进度数"/>
+        <entry name="MapName" type="string" size="64" defaultvalue="NULL" desc="关卡包类型"/>
+        <entry name="difficult" type="int" desc="关卡难度，难关为1，普通关卡为0"/>
+        <entry name="Silver" type="int" desc="(必填)剩余银币数"/>
+        <entry name="lives" type="int" desc="(必填)剩余体力数"/>
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+        /////新手引导信息表(每个引导节点结束触发日志)/
+        //////////////////////////////////////////////-->
+    <!-----*** GuideFlow|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|1056|100|NULL|134|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|2017-09-27 09:30:01|134|100|100 ****------>
+    <macrosgroup name="PlatID" desc="不要随意修改，否则影响统计结果">
+        <macro name="IOS" value="0" desc="ios"/>
+        <macro name="ANDROID" value="1" desc="android"/>
+    </macrosgroup>
+
+    <struct name="GuideFlow" desc="(可选)新手引导信息表">
+        <entry name="GameSvrID" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)玩家"/>
+        <entry name="iGuideID" type="int" desc="(必填)节点ID(节点ID按实际步骤递增编号)"/>
+        <entry name="iLevel" type="int" desc="(可选)等级"/>
+        <entry name="vRoleID" type="string" size="64" defaultvalue="NULL" desc="(必填)玩家角色ID"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+    </struct>
+
+
+    <struct name="ASMIadInfo" version="1" desc="(必填)苹果用户AppStore搜索下载信息(用户登录时记录)">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0 /android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)用户OPENID号"/>
+        <entry name="attribution" type="int" defaultvalue="0"
+               desc="(必填)是否从AppStore搜索下载 0-false/1-true(对应API的iad-attribution)"/>
+        <entry name="OrgName" type="string" size="64" defaultvalue="NULL" desc="(必填)(对应API的iad-org-name)"/>
+        <entry name="CampaignId" type="int" defaultvalue="0" desc="(必填)(对应API的iad-campaign-id)"/>
+        <entry name="CampaignName" type="string" size="64" defaultvalue="NULL" desc="(必填)(对应API的iad-campaign-name)"/>
+        <entry name="ConversionDate" type="datetime" desc="(必填)(对应API的iad-conversion-date)"/>
+        <entry name="ClickDate" type="datetime" desc="(必填)(对应API的iad-click-date)"/>
+        <entry name="AdgroupId" type="int" defaultvalue="0" desc="(必填)(对应API的iad-adgroup-id)"/>
+        <entry name="AdgroupName" type="string" size="64" defaultvalue="NULL" desc="(必填)(对应API的iad-adgroup-name)"/>
+        <entry name="KeyWord" type="string" size="64" defaultvalue="NULL" desc="(必填)(对应API的iad-keyword)"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+    </struct>
+
+    <struct name="LogAntiData" version="1" desc="anti数据日志格式">
+        <entry name="vGameSvrId" type="string" size="25" desc="登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="iSequence" type="int" desc="日志事件的序列号"/>
+        <entry name="vGameAppID" type="string" size="32" desc="游戏APPID"/>
+        <entry name="vOpenID" type="string" size="64" desc="玩家"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="ios 0/android 1"/>
+        <entry name="strData" type="string" size="4096" desc="从sdk接口获取的二进制上报数据的字符串表示"/>
+    </struct>
+
+    <!--//////////////////////////////////////////////
+        /////剧情新手引导信息表(每个引导节点结束触发日志)/
+        //////////////////////////////////////////////-->
+    <!-----*** QuestGuideFlow|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|1056|100|NULL|134|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|2017-09-27 09:30:01|134|100|100 ****------>
+    <macrosgroup name="PlatID" desc="不要随意修改，否则影响统计结果">
+        <macro name="IOS" value="0" desc="ios"/>
+        <macro name="ANDROID" value="1" desc="android"/>
+    </macrosgroup>
+
+    <struct name="QuestGuideFlow" desc="(可选)剧情新手引导信息表">
+        <entry name="GameSvrID" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)玩家"/>
+        <entry name="iGuideID" type="string" size="64" desc="(必填)节点ID(引导所在剧情ID)"/>
+        <entry name="iLevel" type="int" desc="(可选)三消最高通过关卡数"/>
+        <entry name="vRoleID" type="string" size="64" defaultvalue="NULL" desc="(必填)玩家角色ID"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+       /////剧情任务流水表(剧情任务完成触发日志)///
+       //////////////////////////////////////////////-->
+    <!-----*** QuestFlow|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|ch1_fix_statue|10|0|Dialogue_ch1_build_incubator_1|100|100|134|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|2017-09-27 09:30:01|134|100|10|10|10 ****------>
+
+    <macrosgroup name="QuestType">
+        <macro name="Quest_Normal" value="0" desc="普通任务"/>
+        <macro name="Quest_chance" value="1" desc="换肤的任务"/>
+        <macro name="Quest_time" value="2" desc="时间任务"/>
+    </macrosgroup>
+
+    <struct name="QuestFlow" version="1" desc="(必填)剧情任务流水表">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)玩家"/>
+        <entry name="QuestID" type="string" size="64" desc="(必填)任务id"/>
+        <entry name="Questlevel" type="int" desc="(必填)已完成任务数"/>
+        <entry name="QuestType" type="int" desc="(必填)任务类型 对应QuestType,其它说明参考FAQ文档"/>
+        <entry name="totalStar" type="int" desc="(必填)剩余星星数"/>
+        <entry name="Gold" type="int" desc="(必填)剩余金币数"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+        <entry name="Level" type="int" desc="(必填)等级"/>
+        <entry name="Silver" type="int" desc="(必填)剩余银币数"/>
+        <entry name="CountBuySkin" type="int" desc="(必填)购买皮肤数"/>
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+       /////新客户端打开流水表（APP第一次打开时触发日志）///
+       //////////////////////////////////////////////-->
+    <!-----*** AppStart|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|134|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|1.4.7.8473-36643-34352 ****------>
+
+    <macrosgroup name="StartType">
+        <macro name="Start_New" value="0" desc="新安装"/>
+        <macro name="Start_Change" value="1" desc="覆盖安装"/>
+    </macrosgroup>
+
+    <struct name="AppStart" version="1" desc="(必填)打开客户端">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="StartType" type="int" desc="(必填)新客户端类型 对应StartType,其它说明参考FAQ文档"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+    </struct>
+
+
+    <!--//////////////////////////////////////////////
+       /////剧情对话跳过流水表(剧情对话点击skip触发日志)///
+       //////////////////////////////////////////////-->
+    <!-----*** QuestSkipFlow|0|2017-09-27 09:30:01|angry_bird_blast_qq|1|0|abc|ch1_fix_statue|Dialogue_ch1_build_incubator_1|134|E5433D31-3E0B-4A36-82BE-E795C8817754|43.230.45.115|RCb1e87545-47e1-4224-9540-502bd90d76da|1.4.7.8473-36643-34352|2017-09-27 09:30:01|134|100 ****------>
+
+
+    <struct name="QuestSkipFlow" version="1" desc="(必填)剧情对话跳过流水表">
+        <entry name="GameSvrId" type="string" size="25" desc="(必填)登录的游戏服务器编号"/>
+        <entry name="dtEventTime" type="datetime" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="vGameAppid" type="string" size="32" desc="(必填)游戏APPID"/>
+        <entry name="PlatID" type="int" defaultvalue="0" desc="(必填)ios 0/android 1"/>
+        <entry name="iZoneAreaID" type="int" index="1" defaultvalue="0"
+               desc="(必填)针对分区分服的游戏填写分区id，用来唯一标示一个区；非分区分服游戏请填写0"/>
+        <entry name="vopenid" type="string" size="64" desc="(必填)玩家"/>
+        <entry name="QuestID" type="string" size="64" desc="(必填)任务id"/>
+        <entry name="DialogueSkip" type="string" size="64" defaultvalue="NULL"
+               desc="玩家点击skip时，弹板显示对话的ID，玩家没有点击过skip时为NULL"/>
+        <entry name="ClientVersion" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端版本"/>
+        <entry name="DeviceId" type="string" size="64" defaultvalue="NULL" desc="(可选)设备ID"/>
+        <entry name="vClientIP" type="string" size="64" defaultvalue="NULL" desc="(必填)客户端IP(后台服务器记录与玩家通信时的IP地址)"/>
+        <entry name="uuid" type="string" size="64" defaultvalue="NULL" desc="(必填)用户ID"/>
+        <entry name="originAppVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)客户端完整的版本号"/>
+        <entry name="RegisterTime" type="datetime" desc="(必填)玩家注册的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="RegisterClientVersion" type="string" size="64" defaultvalue="NULL" desc="(可选)玩家注册版本号"/>
+
+    </struct>
+
+    <struct  name="SecGameStartFlow"  version="1"	filter="1" desc="游戏对局开始日志">
+        <entry name="GameSvrId" type="string" size="25" desc="登录的游戏服务端编号"/>
+        <entry name="dtEventTime" type="datetime" desc="游戏开局时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="GameAppID" type="string" size="32" desc="游戏APPID"/>
+        <entry name="OpenID" type="string" size="64" desc="玩家OPENID"/>
+        <entry name="PlatID" desc="ios 0 /android 1" type="int" defaultvalue="0"/>
+        <entry name="AreaID" desc="微信 1 /手Q 2" type="int" defaultvalue="0"/>
+        <entry name="ZoneID" desc="小区号id（无则报0）" type="int" defaultvalue="0"/>
+        <entry name="BattleID" type="biguint" desc="本局ID，能与结束日志的BattleID关联上"/>
+
+        <entry name="SvrRoundType"				    type="int"        											desc="本局游戏类型，1为闯关，2为周赛，3为联赛" />
+        <entry name="SvrEnergy"				        type="int"        											desc="本局开始前体力剩余值" />
+        <entry name="SvrMoney"				        type="int"        											desc="本局开始前金币剩余值" />
+        <entry name="SvrDiamond"				    type="int"        											desc="本局开始前钻石剩余值" />
+        <entry name="SvrItem1Count"				    type="int"        											desc="本局开始前道具+3步剩余值" />
+        <entry name="SvrItem2Count"				    type="int"        											desc="本局开始前道具炸弹剩余值" />
+        <entry name="SvrItem3Count"				    type="int"        											desc="本局开始前道具关前火箭剩余值" />
+        <entry name="SvrItem4Count"				    type="int"        											desc="本局开始前道具弹弓剩余值" />
+        <entry name="SvrItem5Count"				    type="int"        											desc="本局开始前道具横向火箭剩余值" />
+        <entry name="SvrItem6Count"				    type="int"        											desc="本局开始前道具纵向火箭剩余值" />
+        <entry name="SvrItem7Count"				    type="int"        											desc="本局开始前道具雷射枪剩余值" />
+        <entry name="SvrItem8Count"				    type="int"        											desc="本局开始前道具置换剩余值" />
+
+        <entry name="SvrRoundStepCount"				    type="int"        										desc="本局允许使用步数" />
+        <entry name="SvrRoundID"				    type="int"        											desc="本局关卡ID" />
+        <entry name="SvrRoundTarget"				    type="string"        			size="256"				desc="本局目标，格式为|元素id,数量,元素2id,数量……|" />
+
+
+
+    </struct>
+
+    <struct  name="SecGameEndFlow"  version="1"	filter="1" desc="游戏对局结束日志">
+        <entry name="GameSvrId" type="string" size="25" desc="登录的游戏服务端编号"/>
+        <entry name="dtEventTime" type="datetime" desc="游戏开局时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+        <entry name="GameAppID" type="string" size="32" desc="游戏APPID"/>
+        <entry name="OpenID" type="string" size="64" desc="玩家OPENID"/>
+        <entry name="PlatID" desc="ios 0 /android 1" type="int" defaultvalue="0"/>
+        <entry name="AreaID" desc="微信 1 /手Q 2" type="int" defaultvalue="0"/>
+        <entry name="ZoneID" desc="小区号id（无则报0）" type="int" defaultvalue="0"/>
+        <entry name="BattleID" type="biguint" desc="本局ID，能与结束日志的BattleID关联上"/>
+        <entry name="ClientVersion" 			    type="string"		size="64" 								desc="客户端版本号"/>
+        <entry name="UserIP" 					    type="string"		size="15"								desc="玩家ip地址" />
+        <entry name="Result" 					    type="int"													desc="服务端校验作弊情况，0为通过"/>
+        <entry name="RoundEndType"				    type="int"        											desc="本局结束方式，0为副本正常结束，1为挑战失败离开副本，2为玩家中途离开，3为系统踢出副本" />
+        <entry name="RoundTimeUse"				    type="int"        											desc="客户端统计的通关时间，单位毫秒（不包含暂停游戏的时间）" />
+        <entry name="RoundRate" 				    type="int" 													desc="本局战斗结果评价星级（1，2，3）" />
+        <entry name="RoundIncome1"    			    type="int"       											desc="当局获得金币数量（加成后）"/>
+        <entry name="RoundItemGet"    			    type="string"       	size="128"							desc="当局获得道具流水，格式为|道具ID1，道具ID2，道具ID3，道具ID4……|"/>
+        <entry name="RoundEnergy"				    type="int"        											desc="本局结束后体力剩余值" />
+        <entry name="RoundType"				        type="int"        											desc="本局游戏类型，1为闯关，2为周赛，3为联赛" />
+
+        <entry name="RoundRocketCount"				type="int"        											desc="本局累计使用火箭数量" />
+        <entry name="RoundRocketBuyCount"		    type="int"        											desc="本局累计购买火箭数量" />
+        <entry name="RoundRocketToCube"				type="int"        											desc="本局火箭累计消除元素数量（不含连锁反应）" />
+        <entry name="RoundGunCount"				    type="int"        											desc="本局累计使用道具枪数量" />
+        <entry name="RoundGunBuyCount"				    type="int"        											desc="本局累计购买道具枪数量" />
+        <entry name="RoundGunToCube"				    type="int"        											desc="本局道具枪累计消除元素数量（不含连锁反应）" />
+        <entry name="RoundBoomCount"				    type="int"        											desc="本局累计炸弹使用数量" />
+        <entry name="RoundBoomBuyCount"				    type="int"        											desc="本局累计炸弹购买数量" />
+        <entry name="RoundBoomToCube"				    type="int"        											desc="本局累计炸弹消除元素数量（不含连锁反应）" />
+        <entry name="RoundItem4Count"				    type="int"        											desc="本局累计+3道具使用数量" />
+        <entry name="RoundItem4BuyCount"				    type="int"        											desc="本局累计+3道具购买数量" />
+        <entry name="RoundItem4ToCube"				    type="int"        											desc="本局累计+3道具消除元素数量（不含连锁反应）" />
+        <entry name="RoundItem5Count"				    type="int"        											desc="本局累计弹弓使用数量" />
+        <entry name="RoundItem5BuyCount"				    type="int"        											desc="本局累计弹弓购买数量" />
+        <entry name="RoundItem5ToCube"				    type="int"        											desc="本局累计弹弓消除元素数量（不含连锁反应）" />
+        <entry name="RoundItem6Count"				    type="int"        											desc="本局累计置换使用数量" />
+        <entry name="RoundItem6BuyCount"				    type="int"        											desc="本局累计置换购买数量" />
+        <entry name="RoundItem6ToCube"				    type="int"        											desc="本局累计置换消除元素数量（不含连锁反应）" />
+
+
+        <entry name="RoundStepUse"				    type="int"        											desc="本局使用步数" />
+        <entry name="RoundStepBuy"				    type="int"        											desc="本局通过购买获得的步数" />
+
+        <entry name="RoundCube1KillCount"				    type="int"        											desc="本局累计消除元素1数量" />
+        <entry name="RoundCube2KillCount"				    type="int"        											desc="本局累计消除元素2数量" />
+        <entry name="RoundCube3KillCount"				    type="int"        											desc="本局累计消除元素3数量" />
+        <entry name="RoundCube4KillCount"				    type="int"        											desc="本局累计消除元素4数量" />
+        <entry name="RoundCube5KillCount"				    type="int"        											desc="本局累计消除元素5数量" />
+        <entry name="RoundCube6KillCount"				    type="int"        											desc="本局累计消除元素6数量" />
+
+        <entry name="RoundCDMax"				    type="int"        											desc="本局中两次消除操作之间的间隔最大值，单位毫秒" />
+        <entry name="RoundCDMin"				    type="int"        											desc="本局中两次消除操作之间的间隔最小值，单位毫秒" />
+
+    </struct>
+
+</metalib>

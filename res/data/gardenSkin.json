@@ -1,0 +1,766 @@
+{
+    "101002c0": {
+        "name": "红色地毯", 
+        "questId": "ch1_set_carpet"
+    }, 
+    "101002c1": {
+        "name": "蓝色地毯", 
+        "questId": "ch1_set_carpet"
+    }, 
+    "101002c2": {
+        "name": "绿色地毯", 
+        "questId": "ch1_set_carpet"
+    }, 
+    "101004c0": {
+        "name": "经典小屋", 
+        "questId": "ch1_build_village_houses"
+    }, 
+    "101004c1": {
+        "name": "船长之家", 
+        "questId": "ch1_build_village_houses"
+    }, 
+    "101004c2": {
+        "name": "薄荷小屋", 
+        "questId": "ch1_build_village_houses"
+    }, 
+    "101007c0": {
+        "name": "椰树码头", 
+        "questId": "ch1_build_new_dock1"
+    }, 
+    "101007c1": {
+        "name": "商旅码头", 
+        "questId": "ch1_build_new_dock1"
+    }, 
+    "101007c2": {
+        "name": "扬帆码头", 
+        "questId": "ch1_build_new_dock1"
+    }, 
+    "101008c0": {
+        "name": "竹条沙滩椅", 
+        "questId": "ch1_put_beach_chair"
+    }, 
+    "101008c1": {
+        "name": "木质沙滩椅", 
+        "questId": "ch1_put_beach_chair"
+    }, 
+    "101008c2": {
+        "name": "帆布沙滩椅", 
+        "questId": "ch1_put_beach_chair"
+    }, 
+    "101013c0": {
+        "name": "叶脉阁楼", 
+        "questId": "ch1_collect_wood"
+    }, 
+    "101013c1": {
+        "name": "散叶阁楼", 
+        "questId": "ch1_collect_wood"
+    }, 
+    "101013c2": {
+        "name": "花瓣阁楼", 
+        "questId": "ch1_collect_wood"
+    }, 
+    "101013c3": {
+        "name": "雏菊之夏", 
+        "questId": "ch1_collect_wood"
+    }, 
+    "101014c0": {
+        "name": "舵手邮箱", 
+        "questId": "ch1_fix_mailbox"
+    }, 
+    "101014c1": {
+        "name": "平安邮箱", 
+        "questId": "ch1_fix_mailbox"
+    }, 
+    "101014c2": {
+        "name": "信风邮箱", 
+        "questId": "ch1_fix_mailbox"
+    }, 
+    "101029c0": {
+        "name": "经典花园", 
+        "questId": "ch1_rebuild_square2"
+    }, 
+    "101029c1": {
+        "name": "热带风情", 
+        "questId": "ch1_rebuild_square2"
+    }, 
+    "101029c2": {
+        "name": "秋池春水", 
+        "questId": "ch1_rebuild_square2"
+    }, 
+    "101029c3": {
+        "name": "魔法奇缘", 
+        "questId": "ch1_rebuild_square2"
+    }, 
+    "101037c0": {
+        "name": "稻草椅子", 
+        "questId": "ch1_make_bench"
+    }, 
+    "101037c1": {
+        "name": "竹条椅子", 
+        "questId": "ch1_make_bench"
+    }, 
+    "101037c2": {
+        "name": "木质椅子", 
+        "questId": "ch1_make_bench"
+    }, 
+    "101038c0": {
+        "name": "彩芭蕉", 
+        "questId": "ch1_plant_tree"
+    }, 
+    "101038c1": {
+        "name": "扇叶树", 
+        "questId": "ch1_plant_tree"
+    }, 
+    "101038c2": {
+        "name": "菇头树", 
+        "questId": "ch1_plant_tree"
+    }, 
+    "101039c0": {
+        "name": "经典喷泉", 
+        "questId": "ch1_decorate_square2"
+    }, 
+    "101039c3": {
+        "name": "魔法奇缘", 
+        "questId": "ch1_decorate_square2"
+    }, 
+    "101049c0": {
+        "name": "落叶听枫", 
+        "questId": "ch1_save_babytree"
+    }, 
+    "101049c1": {
+        "name": "步履轻盈", 
+        "questId": "ch1_save_babytree"
+    }, 
+    "101049c2": {
+        "name": "仙灵巫女", 
+        "questId": "ch1_save_babytree"
+    }, 
+    "101049c3": {
+        "name": "荷风莲韵", 
+        "questId": "ch1_save_babytree"
+    }, 
+    "101053c0": {
+        "name": "红花小窝", 
+        "questId": "ch1_rebuild_library"
+    }, 
+    "101053c1": {
+        "name": "绿花小窝", 
+        "questId": "ch1_rebuild_library"
+    }, 
+    "101053c2": {
+        "name": "紫花小窝", 
+        "questId": "ch1_rebuild_library"
+    }, 
+    "101089c0": {
+        "name": "柠檬饮吧", 
+        "questId": "ch1_build_sea_restaurant2"
+    }, 
+    "101089c1": {
+        "name": "抹茶小店", 
+        "questId": "ch1_build_sea_restaurant2"
+    }, 
+    "101089c2": {
+        "name": "西柚小站", 
+        "questId": "ch1_build_sea_restaurant2"
+    }, 
+    "101090c0": {
+        "name": "魔法敞篷", 
+        "questId": "ch1_lay_lounge_chair"
+    }, 
+    "101090c1": {
+        "name": "小猪顶棚", 
+        "questId": "ch1_lay_lounge_chair"
+    }, 
+    "101090c2": {
+        "name": "五彩躺椅", 
+        "questId": "ch1_lay_lounge_chair"
+    }, 
+    "101099c0": {
+        "name": "木板风车", 
+        "questId": "ch1_build_mill2"
+    }, 
+    "101099c1": {
+        "name": "绿叶风车", 
+        "questId": "ch1_build_mill2"
+    }, 
+    "101099c2": {
+        "name": "麻布风车", 
+        "questId": "ch1_build_mill2"
+    }, 
+    "101099c3": {
+        "name": "秘密基地", 
+        "questId": "ch1_build_mill2"
+    }, 
+    "101106c0": {
+        "name": "石头围栏", 
+        "questId": "ch1_rebuild_railing"
+    }, 
+    "101106c1": {
+        "name": "竹子围栏", 
+        "questId": "ch1_rebuild_railing"
+    }, 
+    "101106c2": {
+        "name": "木头围栏", 
+        "questId": "ch1_rebuild_railing"
+    }, 
+    "101109c0": {
+        "name": "乡村围墙", 
+        "questId": "ch1_fix_wall"
+    }, 
+    "101109c1": {
+        "name": "城堡围墙", 
+        "questId": "ch1_fix_wall"
+    }, 
+    "101109c2": {
+        "name": "热带围墙", 
+        "questId": "ch1_fix_wall"
+    }, 
+    "101110c0": {
+        "name": "乡村门柱", 
+        "questId": "ch1_rebuild_gate"
+    }, 
+    "101110c1": {
+        "name": "城堡门柱", 
+        "questId": "ch1_rebuild_gate"
+    }, 
+    "101110c2": {
+        "name": "热带门柱", 
+        "questId": "ch1_rebuild_gate"
+    }, 
+    "101120c0": {
+        "name": "红花小窝", 
+        "questId": "ch1_rebuild_archive_room1"
+    }, 
+    "101120c1": {
+        "name": "绿花小窝", 
+        "questId": "ch1_rebuild_archive_room1"
+    }, 
+    "101120c2": {
+        "name": "紫花小窝", 
+        "questId": "ch1_rebuild_archive_room1"
+    }, 
+    "101122c0": {
+        "name": "木板桥", 
+        "questId": "ch1_rebuild_new_bridge1"
+    }, 
+    "101122c1": {
+        "name": "竹桥", 
+        "questId": "ch1_rebuild_new_bridge1"
+    }, 
+    "101122c2": {
+        "name": "木桥", 
+        "questId": "ch1_rebuild_new_bridge1"
+    }, 
+    "101122c3": {
+        "name": "纪念浮桥", 
+        "questId": "ch1_rebuild_new_bridge1"
+    }, 
+    "101127c0": {
+        "name": "粉色樱花", 
+        "questId": "ch1_watering_cherry_tree"
+    }, 
+    "101127c1": {
+        "name": "绿色樱花", 
+        "questId": "ch1_watering_cherry_tree"
+    }, 
+    "101127c2": {
+        "name": "紫色樱花", 
+        "questId": "ch1_watering_cherry_tree"
+    }, 
+    "101128c0": {
+        "name": "绿色生长", 
+        "questId": "ch1_repair_vending_machine"
+    }, 
+    "101128c1": {
+        "name": "旋转机器", 
+        "questId": "ch1_repair_vending_machine"
+    }, 
+    "101128c2": {
+        "name": "伞下星星", 
+        "questId": "ch1_repair_vending_machine"
+    }, 
+    "101129c0": {
+        "name": "绿色生长", 
+        "questId": "ch1_decorate_vending_machine"
+    }, 
+    "101129c1": {
+        "name": "旋转机器", 
+        "questId": "ch1_decorate_vending_machine"
+    }, 
+    "101129c2": {
+        "name": "伞下星星", 
+        "questId": "ch1_decorate_vending_machine"
+    }, 
+    "101130c0": {
+        "name": "鸟蛋之家", 
+        "questId": "ch1_upgrade_carpet"
+    }, 
+    "101130c1": {
+        "name": "小鸟之家", 
+        "questId": "ch1_upgrade_carpet"
+    }, 
+    "101130c2": {
+        "name": "卡通世界", 
+        "questId": "ch1_upgrade_carpet"
+    }, 
+    "101131c0": {
+        "name": "白色泳池", 
+        "questId": "ch1_build_swimming_pool"
+    }, 
+    "101131c1": {
+        "name": "红色泳池", 
+        "questId": "ch1_build_swimming_pool"
+    }, 
+    "101131c2": {
+        "name": "橘色泳池", 
+        "questId": "ch1_build_swimming_pool"
+    }, 
+    "101136c0": {
+        "name": "经典小屋", 
+        "questId": "ch1_build_village_houses_base"
+    }, 
+    "101136c1": {
+        "name": "船长之家", 
+        "questId": "ch1_build_village_houses_base"
+    }, 
+    "101136c2": {
+        "name": "薄荷小屋", 
+        "questId": "ch1_build_village_houses_base"
+    }, 
+    "101137c0": {
+        "name": "经典小屋", 
+        "questId": "ch1_decorate_village_houses"
+    }, 
+    "101137c1": {
+        "name": "船长之家", 
+        "questId": "ch1_decorate_village_houses"
+    }, 
+    "101137c2": {
+        "name": "薄荷小屋", 
+        "questId": "ch1_decorate_village_houses"
+    }, 
+    "101139c0": {
+        "name": "经典潜水屋", 
+        "questId": "ch1_rebuild_dive_house"
+    }, 
+    "101139c1": {
+        "name": "流行潜水屋", 
+        "questId": "ch1_rebuild_dive_house"
+    }, 
+    "101139c2": {
+        "name": "魔法潜水屋", 
+        "questId": "ch1_rebuild_dive_house"
+    }, 
+    "101142c0": {
+        "name": "经典潜水屋", 
+        "questId": "ch1_decorate_dive_house"
+    }, 
+    "101142c1": {
+        "name": "流行潜水屋", 
+        "questId": "ch1_decorate_dive_house"
+    }, 
+    "101142c2": {
+        "name": "魔法潜水屋", 
+        "questId": "ch1_decorate_dive_house"
+    }, 
+    "101144c0": {
+        "name": "经典小屋", 
+        "questId": "ch1_hang_up_lantern"
+    }, 
+    "101144c1": {
+        "name": "船长之家", 
+        "questId": "ch1_hang_up_lantern"
+    }, 
+    "101144c2": {
+        "name": "薄荷小屋", 
+        "questId": "ch1_hang_up_lantern"
+    }, 
+    "101169c0": {
+        "name": "大海风情", 
+        "questId": "ch1_decorate_dock_boat"
+    }, 
+    "101169c1": {
+        "name": "特色小鱼", 
+        "questId": "ch1_decorate_dock_boat"
+    }, 
+    "101169c2": {
+        "name": "无限魅力", 
+        "questId": "ch1_decorate_dock_boat"
+    }, 
+    "101173c0": {
+        "name": "紫色小车", 
+        "questId": "ch1_put_cable_car"
+    }, 
+    "101173c1": {
+        "name": "红色小车", 
+        "questId": "ch1_put_cable_car"
+    }, 
+    "101173c2": {
+        "name": "黄色小车", 
+        "questId": "ch1_put_cable_car"
+    }, 
+    "101183c0": {
+        "name": "蓝莓饮吧", 
+        "questId": "ch1_build_camp_restaurant"
+    }, 
+    "101183c1": {
+        "name": "西瓜饮吧", 
+        "questId": "ch1_build_camp_restaurant"
+    }, 
+    "101183c2": {
+        "name": "柠檬饮吧", 
+        "questId": "ch1_build_camp_restaurant"
+    }, 
+    "101184c0": {
+        "name": "蓝莓饮吧", 
+        "questId": "ch1_decorate_camp_restaurant"
+    }, 
+    "101184c1": {
+        "name": "西瓜饮吧", 
+        "questId": "ch1_decorate_camp_restaurant"
+    }, 
+    "101184c2": {
+        "name": "柠檬饮吧", 
+        "questId": "ch1_decorate_camp_restaurant"
+    }, 
+    "101188c0": {
+        "name": "木板风车", 
+        "questId": "ch1_put_mountain_light"
+    }, 
+    "101188c1": {
+        "name": "绿叶风车", 
+        "questId": "ch1_put_mountain_light"
+    }, 
+    "101188c2": {
+        "name": "麻布风车", 
+        "questId": "ch1_put_mountain_light"
+    }, 
+    "101189c0": {
+        "name": "木板风车", 
+        "questId": "ch1_put_camp_light"
+    }, 
+    "101189c1": {
+        "name": "绿叶风车", 
+        "questId": "ch1_put_camp_light"
+    }, 
+    "101189c2": {
+        "name": "麻布风车", 
+        "questId": "ch1_put_camp_light"
+    }, 
+    "101195c0": {
+        "name": "双层小亭", 
+        "questId": "ch1_build_fish_platform_door"
+    }, 
+    "101195c1": {
+        "name": "尖角小亭", 
+        "questId": "ch1_build_fish_platform_door"
+    }, 
+    "101195c2": {
+        "name": "原色小亭", 
+        "questId": "ch1_build_fish_platform_door"
+    }, 
+    "101201c0": {
+        "name": "大海风情", 
+        "questId": "ch1_build_dock_boat"
+    }, 
+    "101201c1": {
+        "name": "特色小鱼", 
+        "questId": "ch1_build_dock_boat"
+    }, 
+    "101201c2": {
+        "name": "无限魅力", 
+        "questId": "ch1_build_dock_boat"
+    }, 
+    "101202c0": {
+        "name": "船沙雕", 
+        "questId": "ch1_build_sand_sculptures"
+    }, 
+    "101202c1": {
+        "name": "神鹰沙雕", 
+        "questId": "ch1_build_sand_sculptures"
+    }, 
+    "101202c2": {
+        "name": "花池沙雕", 
+        "questId": "ch1_build_sand_sculptures"
+    }, 
+    "101203c0": {
+        "name": "粉色玩具", 
+        "questId": "ch1_set_toy"
+    }, 
+    "101203c1": {
+        "name": "红色玩具", 
+        "questId": "ch1_set_toy"
+    }, 
+    "101203c2": {
+        "name": "黄色玩具", 
+        "questId": "ch1_set_toy"
+    }, 
+    "101204c0": {
+        "name": "绿色沙滩毯", 
+        "questId": "ch1_place_mat_sunshade"
+    }, 
+    "101204c1": {
+        "name": "蓝色沙滩毯", 
+        "questId": "ch1_place_mat_sunshade"
+    }, 
+    "101204c2": {
+        "name": "条纹沙滩毯", 
+        "questId": "ch1_place_mat_sunshade"
+    }, 
+    "101205c0": {
+        "name": "红花小窝", 
+        "questId": "ch1_rebuild_library_flower"
+    }, 
+    "101205c1": {
+        "name": "绿花小窝", 
+        "questId": "ch1_rebuild_library_flower"
+    }, 
+    "101205c2": {
+        "name": "紫花小窝", 
+        "questId": "ch1_rebuild_library_flower"
+    }, 
+    "101206c0": {
+        "name": "红花小窝", 
+        "questId": "ch1_rebuild_library_sign"
+    }, 
+    "101206c1": {
+        "name": "绿花小窝", 
+        "questId": "ch1_rebuild_library_sign"
+    }, 
+    "101206c2": {
+        "name": "紫花小窝", 
+        "questId": "ch1_rebuild_library_sign"
+    }, 
+    "101207c0": {
+        "name": "黄金开花", 
+        "questId": "ch1_build_fishing_lamp"
+    }, 
+    "101207c1": {
+        "name": "海豚点灯", 
+        "questId": "ch1_build_fishing_lamp"
+    }, 
+    "101207c2": {
+        "name": "帆船码头", 
+        "questId": "ch1_build_fishing_lamp"
+    }, 
+    "101210c0": {
+        "name": "木板风车", 
+        "questId": "ch1_build_light"
+    }, 
+    "101210c1": {
+        "name": "绿叶风车", 
+        "questId": "ch1_build_light"
+    }, 
+    "101210c2": {
+        "name": "麻布风车", 
+        "questId": "ch1_build_light"
+    }, 
+    "101212c0": {
+        "name": "木板风车", 
+        "questId": "ch1_put_hammock"
+    }, 
+    "101212c1": {
+        "name": "绿叶风车", 
+        "questId": "ch1_put_hammock"
+    }, 
+    "101212c2": {
+        "name": "麻布风车", 
+        "questId": "ch1_put_hammock"
+    }, 
+    "201007c0": {
+        "name": "蓝色大棚", 
+        "questId": "ch2_design_greenhouse_zone"
+    }, 
+    "201007c1": {
+        "name": "红色大棚", 
+        "questId": "ch2_design_greenhouse_zone"
+    }, 
+    "201007c2": {
+        "name": "温室", 
+        "questId": "ch2_design_greenhouse_zone"
+    }, 
+    "201012c0": {
+        "name": "紫色公示栏", 
+        "questId": "ch2_repair_stele"
+    }, 
+    "201012c1": {
+        "name": "红色公示栏", 
+        "questId": "ch2_repair_stele"
+    }, 
+    "201012c2": {
+        "name": "黄色公示栏", 
+        "questId": "ch2_repair_stele"
+    }, 
+    "201013c0": {
+        "name": "木沿展台", 
+        "questId": "ch2_build_exhibitoon_booth"
+    }, 
+    "201013c1": {
+        "name": "圆边展台", 
+        "questId": "ch2_build_exhibitoon_booth"
+    }, 
+    "201013c2": {
+        "name": "三角展台", 
+        "questId": "ch2_build_exhibitoon_booth"
+    }, 
+    "201016c0": {
+        "name": "圆石围栏", 
+        "questId": "ch2_repair_rail"
+    }, 
+    "201016c1": {
+        "name": "花岗岩围栏", 
+        "questId": "ch2_repair_rail"
+    }, 
+    "201016c2": {
+        "name": "木石围栏", 
+        "questId": "ch2_repair_rail"
+    }, 
+    "201018c0": {
+        "name": "蓝色大棚", 
+        "questId": "ch2_install_greenhouse"
+    }, 
+    "201018c1": {
+        "name": "红色大棚", 
+        "questId": "ch2_install_greenhouse"
+    }, 
+    "201018c2": {
+        "name": "温室", 
+        "questId": "ch2_install_greenhouse"
+    }, 
+    "201018c3": {
+        "name": "温室", 
+        "questId": "ch2_install_greenhouse"
+    }, 
+    "201025c0": {
+        "name": "百合花喷泉", 
+        "questId": "ch2_rebuild_fountain-2"
+    }, 
+    "201025c1": {
+        "name": "马蹄莲喷泉", 
+        "questId": "ch2_rebuild_fountain-2"
+    }, 
+    "201025c2": {
+        "name": "池塘", 
+        "questId": "ch2_rebuild_fountain-2"
+    }, 
+    "201026c0": {
+        "name": "百合花喷泉", 
+        "questId": "ch2_open_fountain"
+    }, 
+    "201026c1": {
+        "name": "马蹄莲喷泉", 
+        "questId": "ch2_open_fountain"
+    }, 
+    "201026c2": {
+        "name": "池塘", 
+        "questId": "ch2_open_fountain"
+    }, 
+    "201028c0": {
+        "name": "黄色售票厅", 
+        "questId": "ch2_repair_office"
+    }, 
+    "201028c1": {
+        "name": "红色售票厅", 
+        "questId": "ch2_repair_office"
+    }, 
+    "201028c2": {
+        "name": "紫色售票厅", 
+        "questId": "ch2_repair_office"
+    }, 
+    "201041c0": {
+        "name": "石制展台", 
+        "questId": "ch2_build_fountain_exhibition"
+    }, 
+    "201041c1": {
+        "name": "木制展台", 
+        "questId": "ch2_build_fountain_exhibition"
+    }, 
+    "201041c2": {
+        "name": "竹制展台", 
+        "questId": "ch2_build_fountain_exhibition"
+    }, 
+    "201041c3": {
+        "name": "池塘", 
+        "questId": "ch2_build_fountain_exhibition"
+    }, 
+    "201046c0": {
+        "name": "百合花喷泉", 
+        "questId": "ch2_build_pool-2"
+    }, 
+    "201046c3": {
+        "name": "池塘", 
+        "questId": "ch2_build_pool-2"
+    }, 
+    "201057c0": {
+        "name": "木绳桥", 
+        "questId": "ch2_build_bridge"
+    }, 
+    "201057c1": {
+        "name": "羽毛桥", 
+        "questId": "ch2_build_bridge"
+    }, 
+    "201057c2": {
+        "name": "花藤桥", 
+        "questId": "ch2_build_bridge"
+    }, 
+    "201060c0": {
+        "name": "雨林木展台", 
+        "questId": "ch2_build_new_exhibition-1"
+    }, 
+    "201060c1": {
+        "name": "银杏木展台", 
+        "questId": "ch2_build_new_exhibition-1"
+    }, 
+    "201060c2": {
+        "name": "玻璃展台", 
+        "questId": "ch2_build_new_exhibition-1"
+    }, 
+    "201061c0": {
+        "name": "雨林木展台", 
+        "questId": "ch2_build_new_exhibition-2"
+    }, 
+    "201061c1": {
+        "name": "银杏木展台", 
+        "questId": "ch2_build_new_exhibition-2"
+    }, 
+    "201061c2": {
+        "name": "玻璃展台", 
+        "questId": "ch2_build_new_exhibition-2"
+    }, 
+    "201062c0": {
+        "name": "鸟蛋喷泉", 
+        "questId": "ch2_build_spray-1"
+    }, 
+    "201062c1": {
+        "name": "尖嘴喷泉", 
+        "questId": "ch2_build_spray-1"
+    }, 
+    "201062c2": {
+        "name": "大嘴喷泉", 
+        "questId": "ch2_build_spray-1"
+    }, 
+    "201063c0": {
+        "name": "鸟蛋喷泉", 
+        "questId": "ch2_build_spray-2"
+    }, 
+    "201063c1": {
+        "name": "尖嘴喷泉", 
+        "questId": "ch2_build_spray-2"
+    }, 
+    "201063c2": {
+        "name": "大嘴喷泉", 
+        "questId": "ch2_build_spray-2"
+    }, 
+    "201067c0": {
+        "name": "羽毛椅子", 
+        "questId": "ch2_put_bench"
+    }, 
+    "201067c1": {
+        "name": "石质椅子", 
+        "questId": "ch2_put_bench"
+    }, 
+    "201067c2": {
+        "name": "青木椅子", 
+        "questId": "ch2_put_bench"
+    }
+}

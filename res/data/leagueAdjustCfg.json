@@ -1,0 +1,30 @@
+{   
+    "Master":{
+        "up" : 0,
+        "down" : 60
+    },
+    "Divine":{
+        "up" : 10,
+        "down" : 55
+    },
+    "Diamond":{
+        "up" : 20,
+        "down" : 50
+    },
+    "Platinum":{
+        "up" : 20,
+        "down" : 45
+    },
+    "Gold":{
+        "up" : 30,
+        "down" : 40
+    },
+    "Silver":{
+        "up" : 30,
+        "down" : 30
+    },
+    "Bronze":{
+        "up" : 35,
+        "down" : 0
+    }
+}
