@@ -15,7 +15,7 @@ steps:
 - name: test
   image: php:7
   commands:
-  - vendor/bin/phpunit --configuration config.xml
+  - vendor/bin/phpunit --configuration phpunit.xml
 
 trigger:
   branch:
