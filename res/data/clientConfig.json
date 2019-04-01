@@ -1,9 +1,0 @@
-{
-  "scoreApp": {
-    "firstUnLockLevel": 12,
-    "unlockAfterPassedLevelNum": 20,
-    "intervalTime": 86400,
-    "intervalDay": 259200,
-    "updateNum": 3
-  }
-}
