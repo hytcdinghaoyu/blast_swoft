@@ -27,7 +27,7 @@ return [
     ],
     'httpRouter' => [
         'ignoreLastSlash' => false,
-        'tmpCacheNumber'  => 1003,
+        'tmpCacheNumber'  => 1004,
         'matchAll'        => '',
     ],
     'requestParser'        => [
