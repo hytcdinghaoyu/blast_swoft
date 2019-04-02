@@ -1,6 +1,10 @@
 kind: pipeline
 name: default
 
+workspace:
+  base: /app
+  path: git/drone
+
 steps:
 - name: submodules
   image: docker:git
