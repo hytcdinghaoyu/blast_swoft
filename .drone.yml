@@ -12,7 +12,6 @@ steps:
   - git submodule update --recursive --remote
 
 - name: test
-  image: php-swoole
   commands:
   - vendor/bin/phpunit --configuration phpunit.xml
 
