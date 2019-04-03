@@ -11,11 +11,6 @@ steps:
   commands:
   - git submodule update --recursive --remote
 
-- name: install
-  image: composer
-  commands:
-  - composer install
-
 - name: test
   image: php:7
   commands:
